@@ -740,16 +740,18 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.46",
+
+            "version": "1.0.69",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2"
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7106f78428a344bc4f643c233a94e48795f10967",
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967",
+
                 "shasum": "",
                 "mirrors": [
                     {
@@ -759,15 +761,19 @@
                 ]
             },
             "require": {
+
+                "ext-fileinfo": "*",
+
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
-                "ext-fileinfo": "*",
+
                 "phpspec/phpspec": "^3.4",
-                "phpunit/phpunit": "^5.7.10"
+                "phpunit/phpunit": "^5.7.26"
+
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -826,7 +832,9 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-08-22T07:45:22+00:00"
+
+            "time": "2020-05-18T15:13:39+00:00"
+
         },
         {
             "name": "monolog/monolog",
@@ -1621,6 +1629,7 @@
         },
         {
             "name": "symfony/css-selector",
+
             "version": "v5.1.2",
             "source": {
                 "type": "git",
@@ -1631,6 +1640,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/css-selector/zipball/e544e24472d4c97b2d11ade7caacd446727c6bf9",
                 "reference": "e544e24472d4c97b2d11ade7caacd446727c6bf9",
+
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1640,12 +1650,16 @@
                 ]
             },
             "require": {
+
                 "php": ">=7.2.5"
+
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+
                     "dev-master": "5.1-dev"
+
                 }
             },
             "autoload": {
@@ -1676,7 +1690,9 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
+
             "time": "2020-05-20T17:43:50+00:00"
+
         },
         {
             "name": "symfony/debug",
