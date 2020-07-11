@@ -26,9 +26,19 @@ Route::get("/twtSynopsis",function(){
     return $content;
 });
 
+
 Route::get("/navigationFirstBar","BarController@firstbar");
 Route::get("/navigationSecondBar","BarController@secondbar");
 Route::get("/banner","BannerController@getbanner");
 Route::get("/link","LinkController@getlink");
 Route::get("/notice/{labelld}","NoticeController@in_label");
 Route::get("/notice","NoticeController@in_time");
+
+Route::get("/groupSynopsis/{groupId}","GroupController@queryGroupSynopsis");
+Route::get("/productSynopsis/{productId}","ProductController@queryProductSynopsis");
+Route::get("/activity","ActivityController@queryAllActivity");
+Route::get("/leagueBuilding","MemberController@leagueBuilding");
+Route::get("/member/{groupId}","MemberController@groupMember");
+Route::get("/noticeList","NoticeController@noticeList");
+Route::get("/noticeDetails/{id}","NoticeController@noticeDetails");
+Route::get("/product","ProductController@queryAllProduct");
