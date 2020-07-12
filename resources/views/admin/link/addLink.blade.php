@@ -277,15 +277,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <div class="card card-primary col-md-12">
             <div class="card-header">
-                <h3 class="card-title">请填写以下信息</h3>
+                <h3 class="card-title">请填写以下信息(全部填写)</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{ url('admin/navigation/firstNavigation') }}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{url('admin/link/self')}}" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">栏目标题</label>
+                        <label for="exampleInputEmail1">名称</label>
                         <input type="text" name="title" class="form-control" id="exampleInputEmail1" value="{{ old('title') }}" placeholder="输入栏目标题">
                     </div>
                     <div class="form-group">
@@ -295,6 +295,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="form-group">
                         <label for="exampleInputEmail1">显示位置</label>
                         <input type="text" name="position" class="form-control" id="exampleInputEmail1" value="{{ old('position') }}" placeholder="输入显示位置">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">上传图标图片(注意尺寸)(不上传默认保持原来图片)</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">选择文件</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">只支持jpg、jpeg、png格式，最大2M</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->

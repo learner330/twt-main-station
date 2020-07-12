@@ -39,6 +39,15 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::get('first/{id}', 'NavigationController@updateFirstNavigation');
             Route::get('second/{id}', 'NavigationController@updateSecondNavigation');
         });
+
+        Route::group(['prefix'=>'link'], function(){
+           Route::get('/','LinkController@getAllLinks');
+           Route::get('/self','LinkController@addLink');
+           Route::post('/self','LinkController@addLink');
+           Route::get('/self/{id}', 'LinkController@updateLink');
+           Route::put('/self/{id}', 'LinkController@updateLink');
+           Route::delete('/self', 'LinkController@deleteLink');
+        });
     });
 });
 
