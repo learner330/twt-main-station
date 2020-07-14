@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
-                        <a href="{{url('admin/navigation')}}" class="nav-link active">
+                        <a href="" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 首页管理
@@ -134,37 +134,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>核心成员</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/4')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>产品组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/5')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>设计组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/3')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>前端组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/1')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>程序组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/2')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>移动组</p>
                                 </a>
@@ -263,36 +257,74 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <div class="card card-primary col-md-12">
-            <div class="card-header">
-                <h3 class="card-title">编辑信息</h3>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">外链信息</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>姓名</th>
+                                        <th>头像</th>
+                                        <th>学院</th>
+                                        <th>专业</th>
+                                        <th>年级</th>
+                                        <th>自我介绍</th>
+                                        <th>去向</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($data as $d)
+                                        <tr>
+                                            <td>{{$d['name']}}</td>
+                                            <td>
+                                                <img src="{{url($d['image_url'])}}"/>
+                                            </td>
+                                            <td>{{$d['college']}}</td>
+                                            <td>{{$d['major']}}</td>
+                                            <td>{{$d['grade']}}</td>
+                                            <td>{{$d['introduction']}}</td>
+                                            <td>{{$d['whereabout']}}</td>
+                                            <td>
+                                                <form method="POST" action="{{url('admin/member/self')}}">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="gid" value="{{$gid}}">
+                                                    <input type="hidden" name="id" value="{{$d['id']}}">
+                                                    <div class="btn-group">
+                                                        <button type="button" onclick="window.location.href='{{url('admin/member/self',['id'=>$d['id']])}}'" class="btn btn-sm btn-outline-info">
+                                                            编辑
+                                                        </button>
+                                                        <button type="submit" onclick="return confirm('确定删除吗，将无法恢复？')" class="btn btn-sm btn-outline-danger">
+                                                            删除
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                <button type="button" onclick="window.location.href='{{url('admin/member/new',['gid'=>$gid])}}'" class="btn btn-danger">
+                                    添加
+                                </button>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+                <!-- /.row -->
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form role="form" method="POST" action="{{ url('admin/navigation/firstNavigation',['id'=>$id]) }}" enctype="multipart/form-data">
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                <input type="hidden" name="fid" value="{{$id}}">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">栏目标题</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" value="{{ old('title') }}" placeholder="输入栏目标题">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">链接</label>
-                        <input type="text" name="link" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入链接">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">显示位置</label>
-                        <input type="text" name="position" class="form-control" id="exampleInputEmail1" value="{{ old('position') }}" placeholder="输入显示位置">
-                    </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">提交</button>
-                </div>
-            </form>
-        </div>
+            <!-- /.container-fluid -->
+        </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -323,10 +355,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('admin-lte/dist/js/demo.js')}}"></script>
-<script src="{{asset('admin-lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        bsCustomFileInput.init();
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+        });
     });
 </script>
 </body>

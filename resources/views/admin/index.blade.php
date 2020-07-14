@@ -134,37 +134,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>核心成员</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/4')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>产品组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/5')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>设计组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/3')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>前端组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/1')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>程序组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/2')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>移动-安卓组</p>
                                 </a>
@@ -173,12 +167,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>移动-iOS组</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>成员去向</p>
                                 </a>
                             </li>
                         </ul>

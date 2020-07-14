@@ -93,13 +93,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/navigation')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>顶部导航栏</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/banner')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>banner及底图</p>
                                 </a>
@@ -166,21 +166,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>移动-安卓组</p>
+                                    <p>移动组</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>移动-iOS组</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>成员去向</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item has-treeview menu-open">

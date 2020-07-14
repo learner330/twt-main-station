@@ -41,13 +41,35 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
         });
 
         Route::group(['prefix'=>'link'], function(){
-           Route::get('/','LinkController@getAllLinks');
-           Route::get('/self','LinkController@addLink');
-           Route::post('/self','LinkController@addLink');
-           Route::get('/self/{id}', 'LinkController@updateLink');
-           Route::put('/self/{id}', 'LinkController@updateLink');
-           Route::delete('/self', 'LinkController@deleteLink');
+            Route::get('/','LinkController@getAllLinks');
+            Route::get('/self','LinkController@addLink');
+            Route::post('/self','LinkController@addLink');
+            Route::get('/self/{id}', 'LinkController@updateLink');
+            Route::put('/self/{id}', 'LinkController@updateLink');
+            Route::delete('/self', 'LinkController@deleteLink');
         });
+
+        Route::group(['prefix'=>'banner'], function(){
+            Route::get('/','BannerController@getAllBanners');
+            Route::get('/self','BannerController@addBanner');
+            Route::post('/self','BannerController@addBanner');
+            Route::delete('/self', 'BannerController@deleteBanner');
+            //TODO
+            Route::get('/self/{id}', 'BannerController@updateBanner');
+            Route::put('/self/{id}', 'BannerController@updateBanner');
+        });
+
+        Route::group(['prefix'=>'member'], function(){
+            Route::get('/{gid}', 'MemberController@getMembersByGroup');
+            Route::get('/new/{gid}', 'MemberController@addMember');
+            Route::post('/new/{gid}','MemberController@addMember');
+            Route::delete('/self','MemberController@deleteMember');
+            //TODO
+            Route::get('/self/{gid}', 'MemberController@updateMember');
+            Route::put('/self/{gid}', 'MemberController@updateMember');
+        });
+
+
     });
 });
 

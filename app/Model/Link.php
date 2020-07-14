@@ -17,7 +17,7 @@ class Link extends Model
 
     private static function uploadImage(UploadedFile $file){
         $maxSize = 2048000;
-        $allowedTypes = ['jpg','jpeg', 'png'];
+        $allowedTypes = ['jpg','jpeg', 'png', 'svg'];
 
         $fileSize = $file->getSize();
         $fileExtension = strtolower($file->getClientOriginalExtension());
