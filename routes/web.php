@@ -44,9 +44,9 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::get('/','LinkController@getAllLinks');
             Route::get('/self','LinkController@addLink');
             Route::post('/self','LinkController@addLink');
+            Route::delete('/self', 'LinkController@deleteLink');
             Route::get('/self/{id}', 'LinkController@updateLink');
             Route::put('/self/{id}', 'LinkController@updateLink');
-            Route::delete('/self', 'LinkController@deleteLink');
         });
 
         Route::group(['prefix'=>'banner'], function(){
@@ -69,6 +69,58 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::put('/self/{gid}', 'MemberController@updateMember');
         });
 
+        Route::group(['prefix'=>'league'], function(){
+            Route::get('/','LeagueBuildingController@getAllPhotos');
+            Route::get('/self','LeagueBuildingController@addPhoto');
+            Route::post('/self','LeagueBuildingController@addPhoto');
+            Route::delete('/self', 'LeagueBuildingController@deletePhoto');
+            //TODO
+            Route::get('/self/{id}', 'LeagueBuildingController@updatePhoto');
+            Route::put('/self/{id}', 'LeagueBuildingController@updatePhoto');
+        });
+
+        Route::group(['prefix'=>'synopsis'], function(){
+            Route::get('/','SynopsisController@getSynopsis');
+            Route::get('/self', 'SynopsisController@updateSynopsis');
+            Route::put('/self', 'SynopsisController@updateSynopsis');
+        });
+
+        Route::group(['prefix'=>'activity'], function(){
+            Route::get('/','ActivityController@getAllActivities');
+            Route::get('/self','ActivityController@addActivity');
+            Route::post('/self','ActivityController@addActivity');
+            Route::delete('/self', 'ActivityController@deleteActivity');
+            //TODO
+            Route::get('/self/{id}', 'ActivityController@updateActivity');
+            Route::put('/self/{id}', 'ActivityController@updateActivity');
+        });
+
+        Route::group(['prefix'=>'label'], function(){
+            Route::get('/','LabelController@getAllLabel');
+            Route::get('/self','LabelController@addLabel');
+            Route::post('/self','LabelController@addLabel');
+            Route::delete('/self', 'LabelController@deleteLabel');
+        });
+
+        Route::group(['prefix'=>'notice'], function(){
+            Route::get('/','NoticeController@getAllNotice');
+            Route::get('/self','NoticeController@addNotice');
+            Route::post('/self','NoticeController@addNotice');
+            Route::delete('/self', 'NoticeController@deleteNotice');
+            //TODO
+            Route::get('/self/{id}', 'NoticeController@updateNotice');
+            Route::put('/self/{id}', 'NoticeController@updateNotice');
+        });
+
+        Route::group(['prefix'=>'product'], function(){
+            Route::get('/','ProductController@getAllProduct');
+            Route::get('/self','ProductController@addProduct');
+            Route::post('/self','ProductController@addProduct');
+            Route::delete('/self', 'ProductController@deleteProduct');
+            //TODO
+            Route::get('/self/{id}', 'ProductController@updateProduct');
+            Route::put('/self/{id}', 'ProductController@updateProduct');
+        });
 
     });
 });

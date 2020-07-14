@@ -242,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">成员信息</h1>
+                        <h1 class="m-0 text-dark">编辑简介</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -251,74 +251,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">成员信息</h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>姓名</th>
-                                        <th>头像</th>
-                                        <th>学院</th>
-                                        <th>专业</th>
-                                        <th>年级</th>
-                                        <th>自我介绍</th>
-                                        <th>去向</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($data as $d)
-                                        <tr>
-                                            <td>{{$d['name']}}</td>
-                                            <td>
-                                                <img src="{{url($d['image_url'])}}"/>
-                                            </td>
-                                            <td>{{$d['college']}}</td>
-                                            <td>{{$d['major']}}</td>
-                                            <td>{{$d['grade']}}</td>
-                                            <td>{{$d['introduction']}}</td>
-                                            <td>{{$d['whereabout']}}</td>
-                                            <td>
-                                                <form method="POST" action="{{url('admin/member/self')}}">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="gid" value="{{$gid}}">
-                                                    <input type="hidden" name="id" value="{{$d['id']}}">
-                                                    <div class="btn-group">
-                                                        <button type="button" onclick="window.location.href='{{url('admin/member/self',['id'=>$d['id']])}}'" class="btn btn-sm btn-outline-info">
-                                                            编辑
-                                                        </button>
-                                                        <button type="submit" onclick="return confirm('确定删除吗，将无法恢复？')" class="btn btn-sm btn-outline-danger">
-                                                            删除
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                                <button type="button" onclick="window.location.href='{{url('admin/member/new',['gid'=>$gid])}}'" class="btn btn-danger">
-                                    添加
-                                </button>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
+        <div class="card card-primary col-md-12">
+            <div class="card-header">
+                <h3 class="card-title">请填写以下信息(全部填写)</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form" method="POST" action="{{url('admin/synopsis/self')}}" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                <input type="hidden" name="_method" value="PUT"/>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">简介内容</label>
+                        <textarea type="text" name="content" style="height: 13rem" class="form-control">{{$data->content}}</textarea>
                     </div>
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </section>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </form>
+        </div>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -349,12 +302,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('admin-lte/dist/js/demo.js')}}"></script>
-<script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true,
-            "autoWidth": false,
-        });
+<script src="{{asset('admin-lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
     });
 </script>
 </body>

@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 首页管理
@@ -113,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>主题皮肤</p>
+                                    <p>主题皮肤(未开发)</p>
                                 </a>
                             </li>
                         </ul>
@@ -128,43 +128,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/league')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>相册轮播图</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>核心成员</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/4')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>产品组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/5')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>设计组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/3')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>前端组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/1')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>程序组</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/member/2')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>移动组</p>
                                 </a>
@@ -181,21 +175,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/synopsis')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>工作室简介</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/activity')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>活动轮播图管理</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>加入我们</p>
                                 </a>
                             </li>
                         </ul>
@@ -210,13 +198,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/notice')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>通知列表</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/label')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>标签管理</p>
                                 </a>
@@ -233,9 +221,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admin/product')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>原型图点不开</p>
+                                    <p>产品列表</p>
                                 </a>
                             </li>
                         </ul>
@@ -254,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">导航栏信息</h1>
+                        <h1 class="m-0 text-dark">添加banner信息</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
