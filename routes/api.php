@@ -27,12 +27,12 @@ Route::get("/twtSynopsis",function(){
 });
 
 
-Route::get("/navigationFirstBar","BarController@firstbar");
-Route::get("/navigationSecondBar","BarController@secondbar");
+Route::get("/navigationBar","BarController@getbar");
 Route::get("/banner","BannerController@getbanner");
 Route::get("/link","LinkController@getlink");
 Route::get("/notice/{labelld}","NoticeController@in_label");
 Route::get("/notice","NoticeController@in_time");
+
 
 Route::get("/groupSynopsis/{groupId}","GroupController@queryGroupSynopsis");
 Route::get("/productSynopsis/{productId}","ProductController@queryProductSynopsis");
