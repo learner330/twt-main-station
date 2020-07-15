@@ -39,6 +39,6 @@ Route::get("/productSynopsis/{productId}","ProductController@queryProductSynopsi
 Route::get("/activity","ActivityController@queryAllActivity");
 Route::get("/leagueBuilding","MemberController@leagueBuilding");
 Route::get("/member/{groupId}","MemberController@groupMember");
-Route::get("/noticeList","NoticeController@noticeList");
+Route::get("/noticeList","NoticeController@queryAllNotice");
 Route::get("/noticeDetails/{id}","NoticeController@noticeDetails");
 Route::get("/product","ProductController@queryAllProduct");
