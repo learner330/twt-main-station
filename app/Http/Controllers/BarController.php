@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 class BarController extends Controller
 {
     //
-    public function firstbar(){
+    public function getbar(){
         $firstbar=DB::table('navigation_bar_first')->orderby('position','asc')->get();
-        return $firstbar;
+        $secondbar=DB::table('navigation_bar_second')->orderby('position','asc')->get();
+        $bar= array_collapse([$firstbar,$secondbar]);
+
+        return $bar;
     }
 
-    public function secondbar(){
-        $firstbar=DB::table('navigation_bar_second')->orderby('position','asc')->get();
-        return $firstbar;
-    }
+
 
 }

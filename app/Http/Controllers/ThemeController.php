@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ThemeController extends Controller
 {
     public function gettheme(){
-        $themeid= DB::table('theme')->first();
+        $themeid= DB::table('theme')->get();
         return $themeid;
     }
 }

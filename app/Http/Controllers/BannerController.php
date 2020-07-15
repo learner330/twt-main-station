@@ -9,7 +9,7 @@ class BannerController extends Controller
 {
     //
     public function getbanner(){
-        $banner= DB::table('banner')->orderby('displayOrder','asc')->get();
+        $banner= DB::table('banner')->orderby('state','asc')->get();
         return $banner;
     }
 }

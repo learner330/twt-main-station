@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("/theme","ThemeController@gettheme");
 
 Route::get("/twtSynopsis",function(){
-    $content=DB::table('twt_synopsis')->first()->value('content');
+    $content=DB::table('twt_synopsis')->select('content')->get();
     return $content;
 });
 
@@ -30,7 +30,7 @@ Route::get("/twtSynopsis",function(){
 Route::get("/navigationBar","BarController@getbar");
 Route::get("/banner","BannerController@getbanner");
 Route::get("/link","LinkController@getlink");
-Route::get("/notice/{labelld}","NoticeController@in_label");
+Route::get("/notice/{labelId}","NoticeController@in_label");
 Route::get("/notice","NoticeController@in_time");
 
 
