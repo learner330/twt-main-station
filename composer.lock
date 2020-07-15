@@ -740,6 +740,7 @@
         },
         {
             "name": "league/flysystem",
+
             "version": "1.0.69",
             "source": {
                 "type": "git",
@@ -750,6 +751,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7106f78428a344bc4f643c233a94e48795f10967",
                 "reference": "7106f78428a344bc4f643c233a94e48795f10967",
+
                 "shasum": "",
                 "mirrors": [
                     {
@@ -759,15 +761,19 @@
                 ]
             },
             "require": {
+
                 "ext-fileinfo": "*",
+
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
+
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.26"
+
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -826,7 +832,9 @@
                 "sftp",
                 "storage"
             ],
+
             "time": "2020-05-18T15:13:39+00:00"
+
         },
         {
             "name": "monolog/monolog",
@@ -1621,16 +1629,18 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.4.10",
+
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "afc26133a6fbdd4f8842e38893e0ee4685c7c94b"
+                "reference": "e544e24472d4c97b2d11ade7caacd446727c6bf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/afc26133a6fbdd4f8842e38893e0ee4685c7c94b",
-                "reference": "afc26133a6fbdd4f8842e38893e0ee4685c7c94b",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/e544e24472d4c97b2d11ade7caacd446727c6bf9",
+                "reference": "e544e24472d4c97b2d11ade7caacd446727c6bf9",
+
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1640,12 +1650,16 @@
                 ]
             },
             "require": {
-                "php": "^7.1.3"
+
+                "php": ">=7.2.5"
+
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4-dev"
+
+                    "dev-master": "5.1-dev"
+
                 }
             },
             "autoload": {
@@ -1676,7 +1690,9 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2020-03-27T16:54:36+00:00"
+
+            "time": "2020-05-20T17:43:50+00:00"
+
         },
         {
             "name": "symfony/debug",
