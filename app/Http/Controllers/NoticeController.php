@@ -29,8 +29,12 @@ class NoticeController extends Controller
         return $notices;
     }
 
-    public function noticeDetails(Request $request,$id){
+    public function noticeDetails($id){
         $details=DB::table('notice')->where("id",$id)->get();
+        foreach($details as $detail){
+        $label = DB::table('notice_label')->where("id",$detail->label_id)->pluck('name');
+        $detail->label= $label[0];
+        }
         return $details;
     }
 
