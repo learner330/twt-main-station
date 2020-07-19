@@ -11,9 +11,11 @@ class BarController extends Controller
     public function getbar(){
         $firstbar=DB::table('navigation_bar_first')->orderby('position','asc')->get();
         $secondbar=DB::table('navigation_bar_second')->orderby('position','asc')->get();
-        $bar= array_collapse([$firstbar,$secondbar]);
 
-        return $bar;
+        return response()->json([
+            'first' => $firstbar,
+            'second' => $secondbar
+        ]);
     }
 
 
