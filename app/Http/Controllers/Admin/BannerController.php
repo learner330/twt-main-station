@@ -20,8 +20,8 @@ class BannerController extends Controller
             return view('admin.banner.addBanner');
         } else if($request->isMethod("POST")){
             Banner::addBanner($request->all());
-            return redirect('admin/banner');
         }
+        return redirect('admin/banner');
     }
 
     //TODO
