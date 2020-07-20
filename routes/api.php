@@ -22,12 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("/theme","ThemeController@gettheme");
 
 Route::get("/twtSynopsis",function(){
-    $content=DB::table('twt_synopsis')->select('content')->where('is_mobile', '0')->get();
-    $content_mobile = DB::table('twt_synopsis')->select('content')->where('is_mobile', '1')->get();
-    return response()->json([
-        'pc' => $content,
-        'mobile' => $content_mobile
-    ]);
+    $content=DB::table('twt_synopsis')->select('content')->get();
+    return  $content;
 });
 
 
