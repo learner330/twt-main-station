@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
-    public function groupMember(Request $request,$groupId){
+    public function groupMember($groupId){
         $members=DB::table('member')->where("group_id",$groupId)->get();
         return $members;
     }
