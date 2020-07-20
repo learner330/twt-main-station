@@ -134,6 +134,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{url('admin/group')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>组信息管理</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{url('admin/member/4')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>产品组</p>
@@ -301,7 +307,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     @endforeach
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="window.location.href='{{url('admin/link/self')}}'" class="btn btn-danger">
+                                <button type="button" onclick="window.location.href='{{url('admin/banner/self')}}'" class="btn btn-danger">
                                     添加
                                 </button>
                             </div>
