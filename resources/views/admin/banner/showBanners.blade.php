@@ -301,7 +301,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     @endforeach
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="window.location.href='{{url('admin/link/self')}}'" class="btn btn-danger">
+                                <button type="button" onclick="window.location.href='{{url('admin/banner/self')}}'" class="btn btn-danger">
                                     添加
                                 </button>
                             </div>

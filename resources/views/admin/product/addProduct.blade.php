@@ -273,7 +273,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <textarea type="text" name="introduction" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">上传图标(注意尺寸)</label>
+                        <label for="exampleInputFile">上传图标(注意尺寸)(如果有的话)</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="exampleInputFile">

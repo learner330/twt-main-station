@@ -42,7 +42,8 @@ class Product extends Model
         $name=$data['name'];
         $target_url=$data['target_url'];
         $introduction=$data['introduction'];
-        $image_url=self::uploadImage($data['image']);
+//        $image_url=self::uploadImage($data['image']);
+        $image_url=(isset($data['image'])) ? self::uploadImage($data['image']) : "0";
         $pad_image_url= (isset($data['pad_image'])) ? self::uploadImage($data['pad_image']) : "0";
         $phone_image_url= (isset($data['phone_image'])) ? self::uploadImage($data['phone_image']) : "0";
         self::create([
