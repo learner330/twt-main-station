@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class ActivityController extends Controller
 {
     public function queryAllActivity(){
-        $activities =  DB::table('activity')->orderby('display_order','asc')->get();
+        $activities =  DB::table('activity')->get();
         return $activities;
     }
 }
