@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">导航栏信息</h1>
+                        <h1 class="m-0 text-dark">修改组别信息</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -259,25 +259,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <div class="card card-primary col-md-12">
             <div class="card-header">
-                <h3 class="card-title">请填写以下信息</h3>
+                <h3 class="card-title">修改以下信息</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{ url('admin/navigation/secondNavigation',['fid'=>$fid]) }}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{url('admin/group/self',['id'=>$data->id])}}" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                <input type="hidden" name="fid" value="{{$fid}}"/>
+                <input type="hidden" name="_method" value="PUT"/>
+                <input type="hidden" name="id" value="{{$data->id}}"/>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">栏目标题</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" value="{{ old('title') }}" placeholder="输入栏目标题">
+                        <label for="exampleInputEmail1">组名</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{$data->name}}" placeholder="输入栏目标题">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">链接</label>
-                        <input type="text" name="link" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入链接">
+                        <label for="exampleInputEmail1">简介</label>
+                        <textarea name="introduction" class="form-control">{{$data->introduction}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">显示位置</label>
-                        <input type="text" name="position" class="form-control" id="exampleInputEmail1" value="{{ old('position') }}" placeholder="输入显示位置">
+                        <label for="exampleInputFile">上传图标图片(注意尺寸)(不上传则保持原图片不变)</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">选择文件</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">只支持jpg、jpeg、png格式，最大4M</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->

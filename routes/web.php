@@ -122,6 +122,12 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::put('/self/{id}', 'ProductController@updateProduct');
         });
 
+        Route::group(['prefix'=>'group'], function(){
+            Route::get('/','GroupController@getAllGroup');
+            Route::get('/self/{id}', 'GroupController@updateGroup');
+            Route::put('/self/{id}', 'GroupController@updateGroup');
+        });
+
     });
 });
 
