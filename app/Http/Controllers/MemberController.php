@@ -20,5 +20,5 @@ class MemberController extends Controller
         $images =  DB::table('league_building')->orderby('display_order','asc')->get();
         return $images;
     }
-
+    
 }
