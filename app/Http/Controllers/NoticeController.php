@@ -22,10 +22,10 @@ class NoticeController extends Controller
 
     public function queryAllNotice(){
         $notices=DB::table('notice')->orderby('time','desc')->get();
-        foreach($notices as $notice){
-            $label = DB::table('notice_label')->where("id",$notice->label_id)->pluck('name');
-            $notice->label= $label[0];
-        }
+//        foreach($notices as $notice){
+//            $label = DB::table('notice_label')->where("id",$notice->label_id)->pluck('name');
+//            $notice->label= $label[0];
+//        }
         return $notices;
     }
 
