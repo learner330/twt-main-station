@@ -283,14 +283,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="form-group">
                         <label>年级</label>
                         <select class="form-control" name="grade">
-                            <option>2015级</option>
-                            <option>2016级</option>
-                            <option>2017级</option>
-                            <option>2018级</option>
-                            <option>2019级</option>
-                            <option>2020级</option>
-                            <option>2021级</option>
-                            <option>2022级</option>
+                            <option @if($data->grade=="2015级") selected="selected" @endif>2015级</option>
+                            <option @if($data->grade=="2016级") selected="selected" @endif>2016级</option>
+                            <option @if($data->grade=="2017级") selected="selected" @endif>2017级</option>
+                            <option @if($data->grade=="2018级") selected="selected" @endif>2018级</option>
+                            <option @if($data->grade=="2019级") selected="selected" @endif>2019级</option>
+                            <option @if($data->grade=="2020级") selected="selected" @endif>2020级</option>
+                            <option @if($data->grade=="2021级") selected="selected" @endif>2021级</option>
+                            <option @if($data->grade=="2022级") selected="selected" @endif>2022级</option>
                         </select>
                     </div>
                     <div class="form-group">

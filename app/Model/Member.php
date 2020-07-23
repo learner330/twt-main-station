@@ -72,6 +72,7 @@ class Member extends Model
 
     public static function updateMember($data){
         $originMember=self::getMemberById($data['id']);
+
         $name=$data['name'];
         $college=$data['college'];
         $major=$data['major'];
