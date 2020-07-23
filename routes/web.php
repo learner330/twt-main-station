@@ -24,7 +24,7 @@ Route::any('/register', function (){
 });
 
 Route::get('/{path?}',function ($path=null){
-   return View::make('app');
+   return redirect('/home/index.html');
 })->where('path','.*');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
