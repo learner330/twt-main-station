@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">添加成员信息</h1>
+                        <h1 class="m-0 text-dark">修改成员信息</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -259,28 +259,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <div class="card card-primary col-md-12">
             <div class="card-header">
-                <h3 class="card-title">请填写以下信息(*为必填)</h3>
+                <h3 class="card-title">请填写以下信息</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{url('admin/member/new',['gid'=>$gid])}}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{url('admin/member/self',['id'=>$data->id])}}" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                <input type="hidden" name="gid" value="{{$gid}}"/>
+                <input type="hidden" name="_method" value="PUT"/>
+                <input type="hidden" name="id" value="{{$data->id}}"/>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">姓名*</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="" placeholder="输入姓名">
+                        <label for="exampleInputEmail1">姓名</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{ $data->name }}" placeholder="输入姓名">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">学院*</label>
-                        <input type="text" name="college" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入学院">
+                        <label for="exampleInputEmail1">学院</label>
+                        <input type="text" name="college" class="form-control" id="exampleInputEmail1" value="{{ $data->college }}" placeholder="输入学院">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">专业*</label>
-                        <input type="text" name="major" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入专业">
+                        <label for="exampleInputEmail1">专业</label>
+                        <input type="text" name="major" class="form-control" id="exampleInputEmail1" value="{{ $data->major }}" placeholder="输入专业">
                     </div>
                     <div class="form-group">
-                        <label>年级*</label>
+                        <label>年级</label>
                         <select class="form-control" name="grade">
                             <option>2015级</option>
                             <option>2016级</option>
@@ -294,14 +295,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">自我介绍</label>
-                        <input type="text" name="introduction" class="form-control" id="exampleInputEmail1" value="" placeholder="输入自我介绍">
+                        <input type="text" name="introduction" class="form-control" id="exampleInputEmail1" value="{{ $data->introduction }}" placeholder="输入自我介绍">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">去向*（未毕业请填 本科/研究生在读）</label>
-                        <input type="text" name="whereabout" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入去向">
+                        <label for="exampleInputEmail1">去向（未毕业请填 本科/研究生在读）</label>
+                        <input type="text" name="whereabout" class="form-control" id="exampleInputEmail1" value="{{ $data->whereabout }}" placeholder="输入去向">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">上传照片(注意尺寸)(没有头像则变成无头少年)</label>
+                        <label for="exampleInputFile">上传照片(注意尺寸)(不传则保持原来的照片)</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="exampleInputFile">

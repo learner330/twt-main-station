@@ -30,4 +30,15 @@ class MemberController extends Controller
         Member::deleteMember($id);
         return redirect('admin/member/'.$request->input('gid'));
     }
+
+    public function updateMember(Request $request, $id){
+        $gid=Member::getMemberById($id)->group_id;
+        if($request->isMethod('GET')){
+            $data = Member::getMemberById($id);
+            return view('admin.member.updateMember')->with('data',$data);
+        }else if ($request->isMethod('PUT')){
+            Member::updateMember($request->all());
+        }
+        return redirect('admin/member/'.$gid);
+    }
 }

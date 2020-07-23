@@ -68,8 +68,8 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::post('/new/{gid}','MemberController@addMember');
             Route::delete('/self','MemberController@deleteMember');
             //TODO
-            Route::get('/self/{gid}', 'MemberController@updateMember');
-            Route::put('/self/{gid}', 'MemberController@updateMember');
+            Route::get('/self/{id}', 'MemberController@updateMember');
+            Route::put('/self/{id}', 'MemberController@updateMember');
         });
 
         Route::group(['prefix'=>'league'], function(){
