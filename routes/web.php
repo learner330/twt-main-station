@@ -12,17 +12,20 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/test', function (){
-    return redirect('/admin-lte/index.html');
+
+Route::get('/admin/home', 'HomeController@index')->name('home');
+//关闭注册接口
+Route::any('/register', function (){
+   return redirect('/admin/home');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/{path?}',function ($path=null){
+//   return redirect('/home/index.html');
+//})->where('path','.*');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
     Route::group(['middleware' => 'auth'], function(){
@@ -65,8 +68,8 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
             Route::post('/new/{gid}','MemberController@addMember');
             Route::delete('/self','MemberController@deleteMember');
             //TODO
-            Route::get('/self/{gid}', 'MemberController@updateMember');
-            Route::put('/self/{gid}', 'MemberController@updateMember');
+            Route::get('/self/{id}', 'MemberController@updateMember');
+            Route::put('/self/{id}', 'MemberController@updateMember');
         });
 
         Route::group(['prefix'=>'league'], function(){

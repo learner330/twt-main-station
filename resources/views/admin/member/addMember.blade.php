@@ -259,7 +259,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <div class="card card-primary col-md-12">
             <div class="card-header">
-                <h3 class="card-title">请填写以下信息(全部填写)</h3>
+                <h3 class="card-title">请填写以下信息(*为必填)</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -268,19 +268,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <input type="hidden" name="gid" value="{{$gid}}"/>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">姓名</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{ old('title') }}" placeholder="输入姓名">
+                        <label for="exampleInputEmail1">姓名*</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="" placeholder="输入姓名">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">学院</label>
+                        <label for="exampleInputEmail1">学院*</label>
                         <input type="text" name="college" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入学院">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">专业</label>
+                        <label for="exampleInputEmail1">专业*</label>
                         <input type="text" name="major" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入专业">
                     </div>
                     <div class="form-group">
-                        <label>年级</label>
+                        <label>年级*</label>
                         <select class="form-control" name="grade">
                             <option>2015级</option>
                             <option>2016级</option>
@@ -294,14 +294,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">自我介绍</label>
-                        <input type="text" name="introduction" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入自我介绍">
+                        <input type="text" name="introduction" class="form-control" id="exampleInputEmail1" value="" placeholder="输入自我介绍">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">去向（未毕业请填 本科/研究生在读）</label>
+                        <label for="exampleInputEmail1">去向*（未毕业请填 本科/研究生在读）</label>
                         <input type="text" name="whereabout" class="form-control" id="exampleInputEmail1" value="{{ old('link') }}" placeholder="输入去向">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">上传照片(注意尺寸)</label>
+                        <label for="exampleInputFile">上传照片(注意尺寸)(没有头像则变成无头少年)</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="exampleInputFile">

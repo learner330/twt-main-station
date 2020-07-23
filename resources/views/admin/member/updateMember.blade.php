@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">成员信息</h1>
+                        <h1 class="m-0 text-dark">修改成员信息</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -257,74 +257,69 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">成员信息</h3>
+        <div class="card card-primary col-md-12">
+            <div class="card-header">
+                <h3 class="card-title">请填写以下信息</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form" method="POST" action="{{url('admin/member/self',['id'=>$data->id])}}" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                <input type="hidden" name="_method" value="PUT"/>
+                <input type="hidden" name="id" value="{{$data->id}}"/>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">姓名</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{ $data->name }}" placeholder="输入姓名">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">学院</label>
+                        <input type="text" name="college" class="form-control" id="exampleInputEmail1" value="{{ $data->college }}" placeholder="输入学院">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">专业</label>
+                        <input type="text" name="major" class="form-control" id="exampleInputEmail1" value="{{ $data->major }}" placeholder="输入专业">
+                    </div>
+                    <div class="form-group">
+                        <label>年级</label>
+                        <select class="form-control" name="grade">
+                            <option @if($data->grade=="2015级") selected="selected" @endif>2015级</option>
+                            <option @if($data->grade=="2016级") selected="selected" @endif>2016级</option>
+                            <option @if($data->grade=="2017级") selected="selected" @endif>2017级</option>
+                            <option @if($data->grade=="2018级") selected="selected" @endif>2018级</option>
+                            <option @if($data->grade=="2019级") selected="selected" @endif>2019级</option>
+                            <option @if($data->grade=="2020级") selected="selected" @endif>2020级</option>
+                            <option @if($data->grade=="2021级") selected="selected" @endif>2021级</option>
+                            <option @if($data->grade=="2022级") selected="selected" @endif>2022级</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">自我介绍</label>
+                        <input type="text" name="introduction" class="form-control" id="exampleInputEmail1" value="{{ $data->introduction }}" placeholder="输入自我介绍">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">去向（未毕业请填 本科/研究生在读）</label>
+                        <input type="text" name="whereabout" class="form-control" id="exampleInputEmail1" value="{{ $data->whereabout }}" placeholder="输入去向">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">上传照片(注意尺寸)(不传则保持原来的照片)</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">选择文件</label>
                             </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>姓名</th>
-                                        <th>头像</th>
-                                        <th>学院</th>
-                                        <th>专业</th>
-                                        <th>年级</th>
-                                        <th>自我介绍</th>
-                                        <th>去向</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($data as $d)
-                                        <tr>
-                                            <td>{{$d['name']}}</td>
-                                            <td>
-                                                <img style="height: 14rem; width: 14rem" src="{{url($d['image_url'])}}"/>
-                                            </td>
-                                            <td>{{$d['college']}}</td>
-                                            <td>{{$d['major']}}</td>
-                                            <td>{{$d['grade']}}</td>
-                                            <td>{{$d['introduction']}}</td>
-                                            <td>{{$d['whereabout']}}</td>
-                                            <td>
-                                                <form method="POST" action="{{url('admin/member/self')}}">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="gid" value="{{$gid}}">
-                                                    <input type="hidden" name="id" value="{{$d['id']}}">
-                                                    <div class="btn-group">
-                                                        <button type="button" onclick="window.location.href='{{url('admin/member/self',['id'=>$d['id']])}}'" class="btn btn-sm btn-outline-info">
-                                                            编辑
-                                                        </button>
-                                                        <button type="submit" onclick="return confirm('确定删除吗，将无法恢复？')" class="btn btn-sm btn-outline-danger">
-                                                            删除
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                                <button type="button" onclick="window.location.href='{{url('admin/member/new',['gid'=>$gid])}}'" class="btn btn-danger">
-                                    添加
-                                </button>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">只支持jpg、jpeg、png格式，最大2M</span>
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </section>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </form>
+        </div>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -355,12 +350,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('admin-lte/dist/js/demo.js')}}"></script>
-<script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true,
-            "autoWidth": false,
-        });
+<script src="{{asset('admin-lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
     });
 </script>
 </body>

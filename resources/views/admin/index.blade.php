@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">导航栏信息</h1>
+                        <h1 class="m-0 text-dark"></h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -260,112 +260,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>栏目级别</th>
-                                        <th>栏目标题</th>
-                                        <th>链接</th>
-                                        <th>显示位置</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>IE Mobile</td>
-                                        <td>https://www.baidu.com</td>
-                                        <td>-</td>
-                                        <td>
-                                            {{--写删除的路由--}}
-                                            <form method="POST" action="#">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                                                <input type="hidden" name="curriculum_id" value="">
-                                                {{--写编辑的路由--}}
-                                                <div class="btn-group">
-                                                    <button type="button" onclick="window.location.href=''" class="btn btn-sm btn-outline-info">
-                                                        编辑
-                                                    </button>
-                                                    <button type="submit" onclick="return confirm('确定删除吗，将无法恢复？')" class="btn btn-sm btn-outline-danger">
-                                                        删除
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>PSP browser</td>
-                                        <td>PSP</td>
-                                        <td>-</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <th>-</th>
-                                        <th>-</th>
-                                        <th>-</th>
-                                        <th>-</th>
-                                        <th>
-                                            {{--写跳转添加页面的路由--}}
-                                            <button type="button" onclick="window.location.href=''" class="btn btn-sm btn-outline-primary">
-                                                添加二级导航
-                                            </button>
-                                        </th>
-                                    </tr>
-                                    </tbody>
-{{--                                    <tfoot>--}}
-{{--                                    <tr>--}}
-{{--                                        <th>Rendering engine</th>--}}
-{{--                                        <th>Browser</th>--}}
-{{--                                        <th>Platform(s)</th>--}}
-{{--                                        <th>Engine version</th>--}}
-{{--                                        <th>CSS grade</th>--}}
-{{--                                    </tr>--}}
-{{--                                    </tfoot>--}}
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>栏目级别</th>
-                                        <th>栏目标题</th>
-                                        <th>链接</th>
-                                        <th>显示位置</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                            {{--写跳转添加页面的路由--}}
-                                            <button type="button" onclick="window.location.href=''" class="btn btn-sm btn-outline-primary">
-                                                添加一级导航
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
+
                 </div>
                 <!-- /.row -->
             </div>
