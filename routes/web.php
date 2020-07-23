@@ -12,6 +12,8 @@
 */
 
 
+
+
 Auth::routes();
 
 
@@ -20,6 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::any('/register', function (){
    return redirect('/home');
 });
+
+Route::get('/{path?}',function ($path=null){
+   return View::make('app');
+})->where('path','.*');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
     Route::group(['middleware' => 'auth'], function(){
