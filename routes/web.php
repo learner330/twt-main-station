@@ -12,17 +12,14 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/test', function (){
-    return redirect('/admin-lte/index.html');
-});
 
 Route::get('/home', 'HomeController@index')->name('home');
+//关闭注册接口
+Route::any('/register', function (){
+   return redirect('/home');
+});
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
     Route::group(['middleware' => 'auth'], function(){

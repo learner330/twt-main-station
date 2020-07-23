@@ -281,7 +281,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <tr>
                                             <td>{{$d->title}}</td>
                                             <td>
-                                                <img src="{{url($d->image_url)}}"/>
+                                                <img style="height: 18rem;width: 18rem" src="{{url($d->image_url)}}"/>
                                             </td>
                                             <td>{{$d->target_url}}</td>
                                             <td>
