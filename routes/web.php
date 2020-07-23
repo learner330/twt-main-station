@@ -17,15 +17,15 @@
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/home', 'HomeController@index')->name('home');
 //关闭注册接口
 Route::any('/register', function (){
-   return redirect('/home');
+   return redirect('/admin/home');
 });
 
-Route::get('/{path?}',function ($path=null){
-   return redirect('/home/index.html');
-})->where('path','.*');
+//Route::get('/{path?}',function ($path=null){
+//   return redirect('/home/index.html');
+//})->where('path','.*');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function (){
     Route::group(['middleware' => 'auth'], function(){
