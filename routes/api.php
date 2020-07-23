@@ -42,3 +42,4 @@ Route::get("/member/{groupId}","MemberController@groupMember");
 Route::get("/noticeList","NoticeController@queryAllNotice");
 Route::get("/noticeDetails/{id}","NoticeController@noticeDetails");
 Route::get("/product","ProductController@queryAllProduct");
+Route::get("/showNoticeLabel","NoticeController@showLabels");

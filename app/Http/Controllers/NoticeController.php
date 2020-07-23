@@ -38,5 +38,9 @@ class NoticeController extends Controller
         return $details;
     }
 
+    public function showLabels(){
+        $labels=DB::table('notice_label')->where("is_show",1)->get(['id','name']);
+        return $labels;
+    }
 
 }
